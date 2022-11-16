@@ -9,9 +9,9 @@ export const SET_RESOURCE = "SET_RESOURCE";
 const getListUsers = async(dispatch)=>{
     var respDataBuku = await BukuRepository.getDataBuku({index:1});
     var respResource = await UserRepository.getResource();
-    var dat = JSON.stringify(respDataBuku)+JSON.stringify(respResource);
+    // var dat = JSON.stringify(respDataBuku)+JSON.stringify(respResource);
 
-    dispatch({type:SET_LIST_USERS,data:respDataBuku});
+    dispatch({type:SET_LIST_USERS, data:respDataBuku});
     dispatch({type:SET_RESOURCE, data:respResource})
 }
 

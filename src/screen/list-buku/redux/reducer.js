@@ -3,8 +3,8 @@ import {
 } from './action'
 
 const initData = {
-    listUsers: "no result",
-    listResource: "no result"
+    listUsers: [],
+    listResource: []
 }
 
 export const reducerListBuku = (state = initData, action) => {
