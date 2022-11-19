@@ -1,12 +1,14 @@
-import { legacy_createStore as createStore} from 'redux';
+import { configureStore } from "@reduxjs/toolkit";
 
-const generateStoreState = (reducer)=>{
-    const storeState = createStore(reducer);
-    return storeState;
+const generateStoreState = (reducer) => {
+    const store = configureStore({
+        reducer:reducer
+    });
+    return store;
 }
 
-const StoreHelper = {
+const NewStoreHelper = {
     generateStoreState
 }
 
-export default StoreHelper;
+export default NewStoreHelper;

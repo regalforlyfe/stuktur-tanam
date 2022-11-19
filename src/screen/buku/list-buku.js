@@ -1,20 +1,27 @@
 import React, { useEffect } from "react";
 import { Provider, useDispatch, useSelector } from "react-redux";
+import NewStoreHelper from "../../app/store-helper";
 import StoreHelper from "../../app/store-helper";
 import DefaultButton from "../../components/default-button";
 import ListAtas from "./components/list-atas";
 import ListBawah from "./components/list-bawah";
 import Action from "./redux/action";
-import { reducerListBuku } from "./redux/reducer";
+import reducerSlice from "./redux/reducer";
 
 const ListBuku = () => {
+  const store = NewStoreHelper.generateStoreState(reducerSlice);
+  
   const MainComponent = () => {
-    const users = useSelector((state) => state.listUsers);
-    const resource = useSelector((state) => state.listResource);
-    const dispatch = useDispatch();
-    useEffect(() => {
-      Action.getListUsers(dispatch);
-    }, [dispatch]);
+    const users = useSelector((state) => state.reducer.listUsers);
+    const resource = useSelector((state) => state.reducer.listResource);
+
+    const stateData = store.getState();
+
+    useEffect(()=>{
+      Action.getListUsers(store);
+    },[])
+
+    
     return (
       <div className="container mx-auto">
         <ListAtas users={users} />
@@ -25,21 +32,20 @@ const ListBuku = () => {
           title={"Tambah"}
           backgroundColor={"blue"}
           onClick={() => {
-            Action.getListUsers(dispatch);
           }}
         />
         <DefaultButton
           title={"Reset Resource"}
           backgroundColor={"red"}
           onClick={() => {
-            Action.resetResouce(dispatch);
+           
           }}
         />
       </div>
     );
   };
   return (
-    <Provider store={StoreHelper.generateStoreState(reducerListBuku)}>
+    <Provider store={store}>
       <MainComponent />
     </Provider>
   );

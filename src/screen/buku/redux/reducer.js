@@ -1,20 +1,26 @@
-import {
-    SET_LIST_USERS, SET_RESOURCE,
-} from './action'
+import { createSlice } from '@reduxjs/toolkit'
 
-const initData = {
-    listUsers: [],
-    listResource: []
-}
-
-export const reducerListBuku = (state = initData, action) => {
-    switch (action.type) {
-        case SET_LIST_USERS:
-            console.log("SET_LIST_USERS");
-            return { ...state, listUsers: action.data }
-        case SET_RESOURCE:
-            console.log("SET_RESOURCE");
-            return { ...state, listResource: action.data }
-        default: return state
+const reducerSlice = createSlice({
+    name: 'listUser',
+    initialState: {
+        listUsers: [],
+        listResource: []
+    },
+    reducers: {
+        setListUser: (state,action) => {
+            // Redux Toolkit allows us to write "mutating" logic in reducers. It
+            // doesn't actually mutate the state because it uses the Immer library,
+            // which detects changes to a "draft state" and produces a brand new
+            // immutable state based off those changes
+            console.log("singo payload: " + JSON.stringify(action));
+            state.listUsers = action.payload
+        },
+        setListResource: (state,action) => {
+            console.log("singo payload: " + JSON.stringify(action));
+            state.listResource = action.payload
+        }
     }
-}
+})
+
+export const { setListUser, setListResource } = reducerSlice.actions
+export default reducerSlice;
