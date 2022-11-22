@@ -18,9 +18,8 @@ const ListBuku = () => {
   const firebaseApp = FirebaseUtility.initFirebase();
   const messaging = getMessaging(firebaseApp);
   const generateFCMToken = async () => {
-    // const token = await messaging.getToken({ vapidKey: "BMoJyVdA0uYuVcUHjYGVkNUAePsEngf-N3-r1ls817sVDU54N2H8YFm7FPojSukUG6mxhEJFlKO3txiSB1NmmB8" });
-    const token = await getToken(messaging,{ vapidKey: "BMoJyVdA0uYuVcUHjYGVkNUAePsEngf-N3-r1ls817sVDU54N2H8YFm7FPojSukUG6mxhEJFlKO3txiSB1NmmB8"});
-    console.log("singo: fcmToken: " + token);
+    const token = await FirebaseUtility.getFirebaseToken(messaging);
+    console.log("singo: depan: " + token);
   }
   useEffect(() => {
     generateFCMToken();
