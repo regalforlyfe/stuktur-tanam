@@ -12,11 +12,9 @@ const reducerSlice = createSlice({
             // doesn't actually mutate the state because it uses the Immer library,
             // which detects changes to a "draft state" and produces a brand new
             // immutable state based off those changes
-            console.log("singo payload: " + JSON.stringify(action));
             state.listUsers = action.payload
         },
         setListResource: (state,action) => {
-            console.log("singo payload: " + JSON.stringify(action));
             state.listResource = action.payload
         }
     }
