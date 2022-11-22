@@ -2,7 +2,7 @@ import React from 'react';
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken } from "firebase/messaging";
 
-const vapidKey = "BMoJyVdA0uYuVcUHjYGVkNUAePsEngf-N3-r1ls817sVDU54N2H8YFm7FPojSukUG6mxhEJFlKO3txiSB1NmmB8";
+const vapidKey = process.env.REACT_APP_FIREBASE_VAPID_KEY;
 const initFirebase = () => {
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
