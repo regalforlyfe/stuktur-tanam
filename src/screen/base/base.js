@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import { Provider, useSelector } from "react-redux";
 import NewStoreHelper from "../../app/store-helper";
+import FirebaseUtility from "../../utility/firebase-utility";
 import Header from "../header/header";
 import Navbar from "../navbar/navbar";
 import Section from "../section/section";
 import Action from "./redux/action";
 import reducerSlice from "./redux/reducer";
+import { getMessaging, onMessage } from "firebase/messaging";
 
 const Base = () => {
   const store = NewStoreHelper.generateStoreState(reducerSlice);
+  const firebaseApp = FirebaseUtility.initFirebase();
+  const messaging = getMessaging(firebaseApp);
+  const generateFCMToken = async () => {
+    const token = await FirebaseUtility.getFirebaseToken(messaging);
+    console.log("singo: depan: " + token);
+  };
 
   const MainComponent = () => {
     // ini ga perlu di panggil di sini, karena komponen section sudah berada dalam 1 provider, dia bs langsung akses
@@ -20,6 +28,7 @@ const Base = () => {
 
     useEffect(() => {
       Action.getActiveSection(store);
+      generateFCMToken();
     }, []);
 
     console.log("base executed");

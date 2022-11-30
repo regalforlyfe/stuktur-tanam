@@ -21,17 +21,17 @@ const ListBuku = () => {
   const store = NewStoreHelper.generateStoreState(reducerSlice);
 
   // Initialize Firebase Cloud Messaging and get a reference to the service
-  const firebaseApp = FirebaseUtility.initFirebase();
-  const messaging = getMessaging(firebaseApp);
-  const generateFCMToken = async () => {
-    const token = await FirebaseUtility.getFirebaseToken(messaging);
-    console.log("singo: depan: " + token);
-  };
+  // const firebaseApp = FirebaseUtility.initFirebase();
+  // const messaging = getMessaging(firebaseApp);
+  // const generateFCMToken = async () => {
+  //   const token = await FirebaseUtility.getFirebaseToken(messaging);
+  //   console.log("singo: depan: " + token);
+  // };
   useEffect(() => {
-    generateFCMToken();
-    onMessage(messaging, (payload) => {
-      console.log("Message received. ", payload);
-    });
+    // generateFCMToken();
+    // onMessage(messaging, (payload) => {
+    //   console.log("Message received. ", payload);
+    // });
   }, []);
 
   const MainComponent = () => {
