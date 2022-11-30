@@ -11,14 +11,18 @@ const Base = () => {
   const store = NewStoreHelper.generateStoreState(reducerSlice);
 
   const MainComponent = () => {
-    const activeSection = useSelector((state) => state.reducer.activeSection);
+    // ini ga perlu di panggil di sini, karena komponen section sudah berada dalam 1 provider, dia bs langsung akses
+    // state dari reducer, ga perlu parameterize dan di kirim dari sini.
+    // kl activeSection di declare di sini, dan di controller ada dispatch activeSection, 1 page ini akan re-rendering
+    // itu tidak bagus buat performance krna sama aja harus selalu re-rendering parent nya (state management ga efisien)
+    // const activeSection = useSelector((state) => state.reducer.activeSection);
     store.getState();
 
     useEffect(() => {
       Action.getActiveSection(store);
     }, []);
 
-    console.log("base", activeSection);
+    console.log("base executed");
     return (
       <div className="h-screen" style={{ background: '#26473D' }}>
         <div className="grid grid-cols-6 h-full">
@@ -34,7 +38,11 @@ const Base = () => {
               />
             </div>
             <div className="p-5 bg-white">
-              <Section activeSection={activeSection} />
+              {/* code aslinya :*/}
+              {/*  <Section activeSection={activeSection}/> */}
+              {/* ini ga perlu di kirim parameterize begini. reason nya, kl ini parameterize, dan parameter nya di ambil */}
+              {/* dari deklarasi di atas, ini 1 page akan re rendering setiap kali state berubah */}
+              <Section />
             </div>
           </div>
         </div>
