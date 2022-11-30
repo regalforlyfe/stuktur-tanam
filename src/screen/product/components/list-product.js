@@ -6,7 +6,7 @@ import Action from "../redux/action";
 const ListProduct = ({ products }) => {
     const dispatch = useDispatch();
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto h-screen">
       <div className="text-right py-4">
         <DefaultButton
           title={"Tambah Product"}

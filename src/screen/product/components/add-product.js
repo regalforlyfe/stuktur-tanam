@@ -13,7 +13,7 @@ const AddProduct = () => {
     Action.saveProduct(dispatch,{formData:formData})
   }
   return (
-    <div className="container px-10 py-2">
+    <div>
       <form onSubmit={handleSubmit}>
         <h1 className="text-2xl">Tambah Produk</h1>
         <br />

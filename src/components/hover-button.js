@@ -12,10 +12,10 @@ const HoverButton = ({ title, onClick, backgroundColor }) => {
       {title}
       <div className="tooltiptext">
         <div className="grid grid-cols-2">
-          <div>Tooltip text</div>
-          <div>Tooltip text</div>
-          <div>Tooltip text</div>
-          <div>Tooltip text</div>
+          <div>Harga</div>
+          <div>Rp. 2.000</div>
+          <div>Harga</div>
+          <div>Rp. 5.000</div>
         </div>
       </div>
     </button>

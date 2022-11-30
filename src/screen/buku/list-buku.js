@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import NewStoreHelper from "../../app/store-helper";
 import DefaultButton from "../../components/default-button";
 import FirebaseUtility from "../../utility/firebase-utility";
@@ -8,9 +8,7 @@ import ListBawah from "./components/list-bawah";
 import Action from "./redux/action";
 import reducerSlice from "./redux/reducer";
 import { getMessaging, onMessage } from "firebase/messaging";
-import { async } from "@firebase/util";
 import EncryptDecrypt from "../../services/encrypt-decrypt";
-import Dashboard from "../dashboard/dashboard";
 import HoverButton from "../../components/hover-button";
 
 const ListBuku = () => {
@@ -40,7 +38,7 @@ const ListBuku = () => {
     const users = useSelector((state) => state.reducer.listUsers);
     const resource = useSelector((state) => state.reducer.listResource);
 
-    const stateData = store.getState();
+    store.getState();
 
     useEffect(() => {
       Action.getListUsers(store);
@@ -48,7 +46,6 @@ const ListBuku = () => {
 
     return (
       <div className="container mx-auto">
-        <Dashboard />
         <ListAtas users={users} />
         <div style={{ height: 50 }} />
         <ListBawah resource={resource} />
