@@ -36,7 +36,7 @@ const Base = () => {
       <div className="h-screen" style={{ background: '#26473D' }}>
         <div className="grid grid-cols-6 h-full">
           <div className="col-auto">
-            <Navbar />
+            <Navbar title={"Navbar"} />
           </div>
           <div className="col-span-5 overflow-y-scroll m-5 rounded-3xl">
             <div className="bg-white">
