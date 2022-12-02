@@ -1,6 +1,6 @@
 import BukuRepository from "../../../repositories/buku-repository";
 import UserRepository from "../../../repositories/user-repository";
-import { decremented, incremented, setListResource, setListUser } from "./reducer";
+import { setListBuku, setListResource, setListUser } from "./reducer";
 
 const getListUsers = async (store)=>{
     var respDataBuku = await BukuRepository.getDataBuku({index:1});
@@ -9,8 +9,14 @@ const getListUsers = async (store)=>{
     store.dispatch(setListResource(respResource));
 }
 
+const getListBuku = async (store) => {
+    var respDataBuku = await BukuRepository.getBuku();
+    store.dispatch(setListBuku(respDataBuku));
+}
+
 const Action = {
-    getListUsers
+    getListUsers,
+    getListBuku
 }
 
 export default Action;

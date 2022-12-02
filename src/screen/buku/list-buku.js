@@ -37,18 +37,18 @@ const ListBuku = () => {
   const MainComponent = () => {
     const users = useSelector((state) => state.reducer.listUsers);
     const resource = useSelector((state) => state.reducer.listResource);
-
+    const buku = useSelector((state) => state.reducer.listBuku);
     store.getState();
 
     useEffect(() => {
-      Action.getListUsers(store);
+      Action.getListBuku(store);
     }, []);
 
     return (
       <div className="container mx-auto">
-        <ListAtas users={users} />
+        <ListAtas buku={buku} />
         <div style={{ height: 50 }} />
-        <ListBawah resource={resource} />
+        {/* <ListBawah resource={resource} /> */}
         <div style={{ height: 50 }} />
         <DefaultButton
           title={"Tambah"}

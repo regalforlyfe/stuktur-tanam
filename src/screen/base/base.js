@@ -33,18 +33,18 @@ const Base = () => {
 
     console.log("base executed");
     return (
-      <div className="h-screen" style={{ background: '#26473D' }}>
+      <div className="h-screen" style={{ background: "#26473D" }}>
         <div className="grid grid-cols-6 h-full">
           <div className="col-auto">
-            <Navbar title={"Navbar"} />
+            <Navbar
+              onClick={(selectedSection) => {
+                Action.getSelectedSection(store, selectedSection);
+              }}
+            />
           </div>
           <div className="col-span-5 overflow-y-scroll m-5 rounded-3xl">
             <div className="bg-white">
-              <Header
-                onClick={(selectedSection) => {
-                  Action.getSelectedSection(store, selectedSection);
-                }}
-              />
+              <Header />
             </div>
             <div className="p-5 bg-white">
               {/* code aslinya :*/}
