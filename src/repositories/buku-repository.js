@@ -1,6 +1,6 @@
+import BukuModel from "../screen/buku/models/buku-model";
 import Endpoint from "../services/endpoint";
 import CallApi from "../services/request-helper";
-import { BukuModel } from "../screen/buku/models/buku-model";
 
 const BASE_API = process.env.REACT_APP_BASE_API;
 
@@ -11,28 +11,10 @@ const getDataBuku = async ({ index }) => {
 };
 
 const getBuku = async () => {
-    let buku = [
-    new BukuModel(
-      1,
-      "https://reqres.in/img/faces/1-image.jpg",
-      "user1@gmail.com",
-      "user",
-      "1"
-    ),
-    new BukuModel(
-      2,
-      "https://reqres.in/img/faces/1-image.jpg",
-      "user1@gmail.com",
-      "user",
-      "1"
-    ),
-    new BukuModel(
-      3,
-      "https://reqres.in/img/faces/1-image.jpg",
-      "user1@gmail.com",
-      "user",
-      "1"
-    ),
+  let buku = [
+    new BukuModel({ id: "1", avatar: "https://reqres.in/img/faces/1-image.jpg", email: "user1@gmail.com", namaDepan: "user", namaBelakang: "1" }),
+    new BukuModel({ id: "2", avatar: "https://reqres.in/img/faces/1-image.jpg", email: "user1@gmail.com", namaDepan: "user", namaBelakang: "1" }),
+    new BukuModel({ id: "3", avatar: "https://reqres.in/img/faces/1-image.jpg", email: "user1@gmail.com", namaDepan: "user", namaBelakang: "1" }),
   ];
   console.log("repo", buku);
   return buku;

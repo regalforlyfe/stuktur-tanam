@@ -1,15 +1,11 @@
-export class BukuModel {
-    // let id = "";
-    // let avatar = "";
-    // let email = "";
-    // let namaDepan = "";
-    // let namaBelakang = "";
-  
-    constructor(id, avatar, email, namaDepan, namaBelakang) {
-      this.id = id;
-      this.avatar = avatar;
-      this.email = email;
-      this.namaDepan = namaDepan;
-      this.namaBelakang = namaBelakang;
-    }
-  }
+function BukuModel({id,avatar,email,namaDepan,namaBelakang}) {
+  let obj = {};
+  obj.id = id;
+  obj.avatar = avatar;
+  obj.email = email;
+  obj.namaDepan = namaDepan;
+  obj.namaBelakang = namaBelakang;
+  return obj;
+}
+
+export default BukuModel
