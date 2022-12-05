@@ -46,6 +46,11 @@ const ListBuku = () => {
 
     return (
       <div className="container mx-auto">
+        <div className="text-TNR">Times New Roman</div>
+        <div className="text-Sagoe">Segoe UI</div>
+        <div className="text-ANB">Arial Narrow Bold</div>
+        <div className=""></div>
+        <div className=""></div>
         <ListAtas buku={buku} />
         <div style={{ height: 50 }} />
         {/* <ListBawah resource={resource} /> */}

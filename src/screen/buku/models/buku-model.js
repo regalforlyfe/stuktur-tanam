@@ -8,4 +8,4 @@ function BukuModel({id,avatar,email,namaDepan,namaBelakang}) {
   return obj;
 }
 
-export default BukuModel
+export default BukuModel;
