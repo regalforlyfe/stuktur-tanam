@@ -15,6 +15,8 @@ export default async function CallApi({
     }
 
     const response = await axios({ url, method, data, headers }).catch((err) => err.response)
+
+    console.log(response);
     // update response handling
     
     // end of response handling

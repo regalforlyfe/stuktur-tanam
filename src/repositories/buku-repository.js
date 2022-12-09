@@ -13,13 +13,18 @@ const getDataBuku = async ({ index }) => {
 const getBuku = async () => {
   const url = BASE_API + Endpoint.listUsers + "?page=" + 1;
   const response = await CallApi({ url, method: "GET" });
-  const data = typeof response != 'undefined' ? response.data : null;
-  const data2 = typeof data != 'undefined' && data != null ? data.data : [];
-  console.log("api", data2);
+  const data = typeof response != "undefined" ? response.data : null;
+  const data2 = typeof data != "undefined" && data != null ? data.data : [];
   let buku2 = [];
-  
-  data2.forEach(element => {
-    var buku = new BukuModel({ id: element.id, avatar: element.avatar, email: element.email, namaDepan: element.first_name, namaBelakang: element.last_name })
+
+  data2.forEach((element) => {
+    var buku = new BukuModel({
+      id: element.id,
+      avatar: element.avatar,
+      email: element.email,
+      namaDepan: element.first_name,
+      namaBelakang: element.last_name,
+    });
     buku2.push(buku);
   });
 

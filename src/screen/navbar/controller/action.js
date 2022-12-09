@@ -3,7 +3,7 @@ import EncryptDecrypt from "../../../services/encrypt-decrypt";
 const checkPrivilege = () => {
   const data = localStorage.getItem("user-info");
   var privilege = data ? EncryptDecrypt.decryptData(data) : "";
-  console.log(privilege); //get from session;
+  // console.log(privilege); //get from session;
   if (privilege === "QpwL5tke4Pnpja7X4") {
     return [
       ["Home", ""],

@@ -2,7 +2,6 @@ import React from "react";
 import "../list-buku.css";
  
 const ListAtas = ({ buku}) => {
-  console.log(buku);
   return (
     <div>
       <table className="border-collapse border border-slate-400 table-auto text-center w-full">

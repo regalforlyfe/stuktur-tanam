@@ -15,7 +15,7 @@ const Base = () => {
   const messaging = getMessaging(firebaseApp);
   const generateFCMToken = async () => {
     const token = await FirebaseUtility.getFirebaseToken(messaging);
-    console.log("singo: depan: " + token);
+    // console.log("singo: depan: " + token);
   };
 
   const MainComponent = () => {
@@ -31,7 +31,7 @@ const Base = () => {
       generateFCMToken();
     }, []);
 
-    console.log("base executed");
+    // console.log("base executed");
     return (
       <div className="h-screen" style={{ background: "#26473D" }}>
         <div className="grid grid-cols-6 h-full">

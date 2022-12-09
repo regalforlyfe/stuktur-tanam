@@ -12,12 +12,6 @@ import EncryptDecrypt from "../../services/encrypt-decrypt";
 import HoverButton from "../../components/hover-button";
 
 const ListBuku = () => {
-  const test = EncryptDecrypt.encryptData("hai");
-  console.log(test);
-
-  const hasil = EncryptDecrypt.decryptData(test);
-  console.log(hasil);
-
   const store = NewStoreHelper.generateStoreState(reducerSlice);
 
   // Initialize Firebase Cloud Messaging and get a reference to the service
