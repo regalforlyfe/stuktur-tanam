@@ -1,29 +1,40 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "Product 1",
-      "price": 111
+      "id": 7,
+      "name": "Michael",
+      "price": 50000,
+      "image": "https://reqres.in/img/faces/7-image.jpg"
     },
     {
-      "id": 2,
-      "title": "Product 2",
-      "price": 222
+      "id": 8,
+      "name": "Lindsay",
+      "price": 20000,
+      "image": "https://reqres.in/img/faces/8-image.jpg"
     },
     {
-      "id": 3,
-      "title": "Product 3",
-      "price": 333
+      "id": 9,
+      "name": "Tobias",
+      "price": 30000,
+      "image": "https://reqres.in/img/faces/9-image.jpg"
     },
     {
-      "id": 4,
-      "title": "Product 4",
-      "price": 444
+      "id": 10,
+      "name": "Byron",
+      "price": 4000,
+      "image": "https://reqres.in/img/faces/10-image.jpg"
     },
     {
-      "id": 5,
-      "title": "Product 5",
-      "price": 555
+      "id": 11,
+      "name": "George",
+      "price": 50000,
+      "image": "https://reqres.in/img/faces/11-image.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Rachel",
+      "price": 60000,
+      "image": "https://reqres.in/img/faces/12-image.jpg"
     }
   ]
 }
