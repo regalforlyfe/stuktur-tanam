@@ -1,12 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import DefaultButton from "../../../components/default-button";
-import StoreHelper from "../../../services/store-helper";
 import Action from "../redux/Action";
-import reducerSlice from "../redux/Reducer";
 
 const ListProduct = ({ products }) => {
-  const store = StoreHelper.generateStoreState(reducerSlice);
-  store.getState();
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="text-right py-4">
@@ -14,7 +12,7 @@ const ListProduct = ({ products }) => {
           title={"Tambah Product"}
           backgroundColor={"blue"}
           onClick={() => {
-            Action.showAddProduct(store, { status: true });
+            Action.showAddProduct(dispatch, { status: true });
           }}
         />
       </div>
@@ -36,7 +34,7 @@ const ListProduct = ({ products }) => {
               <td className="border border-slate-300">{index + 1}</td>
               <td className="border border-slate-300">{item.id}</td>
               <td className="border border-slate-300">
-                <img src={item.image} />
+                <img src={item.image} alt={item.name} />
               </td>
               <td className="border border-slate-300">{item.name}</td>
               <td className="border border-slate-300">Rp. {item.price}</td>

@@ -11,7 +11,7 @@ import StoreHelper from "../../services/store-helper";
 const Buku = () => {
   const store = StoreHelper.generateStoreState(reducerSlice);
   const MainComponent = () => {
-    const users = useSelector((state) => state.reducer.listUsers);
+    // const users = useSelector((state) => state.reducer.listUsers);
     const resource = useSelector((state) => state.reducer.listResource);
     const buku = useSelector((state) => state.reducer.listBuku);
     store.getState();

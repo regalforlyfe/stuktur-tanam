@@ -13,7 +13,6 @@ import {
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 import CaptureUtility from "../../utility/capture-utility";
-import Cropper from "cropperjs";
 
 ChartJS.register(
   CategoryScale,

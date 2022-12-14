@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Provider, useSelector } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import reducerSlice from "./redux/Reducer";
 import Action from "./redux/Action";
 import ListProduct from "./components/ListProduct";
@@ -11,7 +11,8 @@ const Product = () => {
 
   const MainComponent = () => {
     const products = useSelector((state) => state.reducer.listProduct);
-    const showAddProduct = useSelector((state) => state.reducer.showAddProduct);
+    const showAddProduct = useSelector((state) => state.reducer.addProduct);
+    // const dispatch = useDispatch();
     store.getState();
 
     const Parent = () => {

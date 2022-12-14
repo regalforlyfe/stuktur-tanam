@@ -7,11 +7,11 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('title', e.target.title.value);
-    formData.append('price', e.target.price.value);
+    formData.append("title", e.target.title.value);
+    formData.append("price", e.target.price.value);
     console.log(formData);
-    Action.saveProduct(dispatch,{formData:formData})
-  }
+    Action.saveProduct(dispatch, { formData: formData });
+  };
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -39,7 +39,9 @@ const AddProduct = () => {
             placeholder="Harga Produk"
           />
         </label>
-        <button type="submit" className="button">Submit</button>
+        <button type="submit" className="button">
+          Submit
+        </button>
       </form>
     </div>
   );

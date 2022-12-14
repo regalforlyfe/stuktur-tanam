@@ -12,6 +12,7 @@ const Home = () => {
   const messaging = getMessaging(firebaseApp);
   const generateFCMToken = async () => {
     const token = await FirebaseUtility.getFirebaseToken(messaging);
+    console.log(token);
   };
 
   const MainComponent = () => {

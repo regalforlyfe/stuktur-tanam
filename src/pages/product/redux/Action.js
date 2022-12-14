@@ -19,8 +19,8 @@ const saveProduct = async (store, { formData }) => {
   showAddProduct(store, { status: false });
 };
 
-const showAddProduct = (store, { status }) => {
-  store.dispatch(setShowAddProduct(status));
+const showAddProduct = (dispatch, { status }) => {
+  dispatch(setShowAddProduct(status));
 };
 
 const Action = {
