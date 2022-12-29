@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,7 +13,8 @@ import {
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 import CaptureUtility from "../../utility/capture-utility";
-import Cropper from "cropperjs";
+import { FileUploader } from "react-drag-drop-files";
+const fileTypes = ["JPG", "PNG", "GIF"];
 
 ChartJS.register(
   CategoryScale,
@@ -112,6 +113,12 @@ const Dashboard = () => {
     ],
   };
 
+  const [file, setFile] = useState(null);
+  const handleChange = (file) => {
+    setFile(file);
+    console.log(file);
+  };
+
   const exportRef = useRef();
   return (
     <div className="container mx-auto h-screen">
@@ -122,6 +129,8 @@ const Dashboard = () => {
       <button onClick={() => CaptureUtility(exportRef.current, "test")}>
         Capture Image
       </button>
+
+      <FileUploader handleChange={handleChange} name="file" types={fileTypes} />
     </div>
   );
 };
