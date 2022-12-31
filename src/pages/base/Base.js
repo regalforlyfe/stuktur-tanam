@@ -10,6 +10,7 @@ import Dashboard from "../dashboard/Dashboard";
 import Home from "../home/Home";
 import AppLayout from "../layout/applayout/AppLayout";
 import AuthLayout from "../layout/authlayout/AuthLayout";
+import Management from "../management/Management";
 import Product from "../product/Product";
 import Action from "./redux/Action";
 import reducerSlice from "./redux/Reducer";
@@ -31,6 +32,7 @@ function Base() {
               <Route path={RouteName.product} element={<Product />} />
               <Route path={RouteName.dashboard} element={<Dashboard />} />
               <Route path={RouteName.buku} element={<Buku />} />
+              <Route path={RouteName.management} element={<Management />} />
             </Route>
           </Routes>
         </BrowserRouter>

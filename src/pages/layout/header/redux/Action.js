@@ -8,6 +8,7 @@ const checkPrivilege = () => {
       ["Dashboard", RouteName.dashboard],
       ["Product", RouteName.product],
       ["Buku", RouteName.buku],
+      ["Management", RouteName.management],
     ];
   } else {
     return [
