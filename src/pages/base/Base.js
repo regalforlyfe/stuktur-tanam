@@ -10,6 +10,7 @@ import Dashboard from "../dashboard/Dashboard";
 import Home from "../home/Home";
 import AppLayout from "../layout/applayout/AppLayout";
 import AuthLayout from "../layout/authlayout/AuthLayout";
+import Detail from "../management/component/Detail";
 import Management from "../management/Management";
 import Product from "../product/Product";
 import Action from "./redux/Action";

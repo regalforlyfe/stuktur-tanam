@@ -1,6 +1,9 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
+import EncryptDecrypt from "../../../services/encrypt-decrypt";
+import RouteName from "../../../services/routename";
 
 const Tabel = ({ list, loading }) => {
   if (loading) {

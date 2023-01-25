@@ -12,27 +12,45 @@ const getDataBuku = async ({ index }) => {
 
 const getBuku = async () => {
   const url = BASE_API + Endpoint.listUsers + "?page=" + 1;
-  const response = await CallApi({ url, method: "GET" });
-  const data = typeof response != "undefined" ? response.data : null;
-  const data2 = typeof data != "undefined" && data != null ? data.data : [];
+  // const response = await CallApi({ url, method: "GET" });
+  // const data = typeof response != "undefined" ? response.data : null;
+  // const data2 = typeof data != "undefined" && data != null ? data.data : [];
   let buku2 = [];
-  data2.forEach((element) => {
-    var buku = new BukuModel({
-      id: element.id,
-      avatar: element.avatar,
-      email: element.email,
-      namaDepan: element.first_name,
-      namaBelakang: element.last_name,
-    });
-    buku2.push(buku);
-  });
+  // data2.forEach((element) => {
+  //   var buku = new BukuModel({
+  //     id: element.id,
+  //     avatar: element.avatar,
+  //     email: element.email,
+  //     namaDepan: element.first_name,
+  //     namaBelakang: element.last_name,
+  //   });
+  //   buku2.push(buku);
+  // });
 
-  // let buku = [
-  //   new BukuModel({ id: "1", avatar: "https://reqres.in/img/faces/1-image.jpg", email: "user1@gmail.com", namaDepan: "user", namaBelakang: "1" }),
-  //   new BukuModel({ id: "2", avatar: "https://reqres.in/img/faces/1-image.jpg", email: "user1@gmail.com", namaDepan: "user", namaBelakang: "1" }),
-  //   new BukuModel({ id: "3", avatar: "https://reqres.in/img/faces/1-image.jpg", email: "user1@gmail.com", namaDepan: "user", namaBelakang: "1" }),
-  // ];
-  // console.log("repo", buku);
+  let buku = [
+    new BukuModel({
+      id: "1",
+      avatar: "https://reqres.in/img/faces/1-image.jpg",
+      email: "user1@gmail.com",
+      namaDepan: "user",
+      namaBelakang: "1",
+    }),
+    new BukuModel({
+      id: "2",
+      avatar: "https://reqres.in/img/faces/1-image.jpg",
+      email: "user1@gmail.com",
+      namaDepan: "user",
+      namaBelakang: "1",
+    }),
+    new BukuModel({
+      id: "3",
+      avatar: "https://reqres.in/img/faces/1-image.jpg",
+      email: "user1@gmail.com",
+      namaDepan: "user",
+      namaBelakang: "1",
+    }),
+  ];
+  console.log("repo", buku);
   return buku2;
 };
 

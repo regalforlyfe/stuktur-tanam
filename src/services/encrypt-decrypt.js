@@ -9,20 +9,24 @@ const encryptData = (word) => {
 };
 
 const enc = (word) => {
-  let encrypted = CryptoJS.AES.encrypt(JSON.stringify(word), secretKey).toString();
+  let encrypted = CryptoJS.DES.encrypt(
+    JSON.stringify(word),
+    secretKey
+  ).toString();
   return encrypted;
 };
 
 const dec = (word) => {
-  let decrypted = CryptoJS.AES.decrypt(word, secretKey).toString(CryptoJS.enc.Utf8);
+  let decrypted = CryptoJS.AES.decrypt(word, secretKey).toString(
+    CryptoJS.enc.Utf8
+  );
   return JSON.parse(decrypted);
 };
-
 
 const EncryptDecrypt = {
   encryptData,
   enc,
-  dec
+  dec,
 };
 
 export default EncryptDecrypt;
