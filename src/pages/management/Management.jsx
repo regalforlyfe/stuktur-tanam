@@ -20,7 +20,7 @@ const Management = () => {
     const totalPage = useSelector((state) => state.reducer.totalPage);
 
     useEffect(() => {
-      Action.getList(store, currentPage, loading);
+      Action.getList(store, { page: currentPage });
     }, []);
     return (
       <div
@@ -53,10 +53,13 @@ const Management = () => {
         </div>
         <div>
           <Pagination
+            totalPage={20}
             postsPerPage={postPerPage}
             totalPosts={total}
             currentPage={currentPage}
-            onClick={() => {}}
+            onClick={(number) => {
+              Action.getList(store, { page: number });
+            }}
           />
         </div>
       </div>

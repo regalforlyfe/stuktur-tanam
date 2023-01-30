@@ -8,6 +8,7 @@ import {
 } from "./Reducer";
 
 const getList = async (store, { page }) => {
+  console.log(page);
   var response = await ManagementRepository.getUsers(page);
   if (response) {
     store.dispatch(setLoading(false));
