@@ -6,6 +6,8 @@ const reducerSlice = createSlice({
         listUsers: [],
         listResource: [],
         listBuku:[],
+        listUserData: [],
+
     },
     reducers: {
         setListUser: (state,action) => {
@@ -20,9 +22,12 @@ const reducerSlice = createSlice({
         },
         setListBuku: (state,action) => {
             state.listBuku = action.payload
+        },
+        setListUserData: (state,action) => {
+            state.listUserData = action.payload
         }
     }
 })
 
-export const { setListUser, setListResource, setListBuku } = reducerSlice.actions
+export const { setListUser, setListResource, setListBuku, setListUserData } = reducerSlice.actions
 export default reducerSlice;

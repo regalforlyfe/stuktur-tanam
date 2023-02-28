@@ -1,9 +1,22 @@
 import React from "react";
-import "../Buku.css";
+import DefaultButton from "../../../components/default-button";
+import { useNavigate } from "react-router-dom";
+import "../Daftar.css";
  
-const ListAtas = ({ buku}) => {
+const DaftarList = ({ daftar}) => {
+  const navigate = useNavigate();
+
+  const navigateToAddDaftar = () => {
+    navigate('/addDaftar')
+  }
+  
   return (
     <div>
+        <DefaultButton
+           title={"Tambah"}
+           backgroundColor={"blue"} 
+           onClick={navigateToAddDaftar}
+         />
       <table className="border-collapse border border-slate-400 table-auto text-center w-full">
         <thead>
           <tr>
@@ -13,10 +26,11 @@ const ListAtas = ({ buku}) => {
             <th className="border border-slate-300">Email</th>
             <th className="border border-slate-300">Nama Depan</th>
             <th className="border border-slate-300">Nama Belakang</th>
+            <th className="border border-slate-300">Action</th>
           </tr>
         </thead>
         <tbody>
-          {buku.map((item, index) => (
+          {daftar.map((item, index) => (
             <tr key={item.id}>
               {/* <td className="border border-slate-300">{index + 1}</td> */}
               <td className="border border-slate-300"> <img className="img-responsive" src={item.avatar} alt="mini-project"></img></td>
@@ -24,6 +38,18 @@ const ListAtas = ({ buku}) => {
               <td className="border border-slate-300">{item.email}</td>
               <td className="border border-slate-300">{item.namaDepan}</td>
               <td className="border border-slate-300">{item.namaBelakang}</td>
+              <td className="border border-slate-300">
+                <DefaultButton
+                title="Edit"
+                onClick={""}
+                backgroundColor="yellow"
+                />
+                <DefaultButton
+                title="Delete"
+                onClick={""}
+                backgroundColor="red"
+                />
+              </td>
             </tr>
           ))}
         </tbody>
@@ -32,4 +58,4 @@ const ListAtas = ({ buku}) => {
   );
 };
 
-export default ListAtas;
+export default DaftarList;

@@ -6,11 +6,15 @@ import StoreHelper from "../../services/store-helper";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
 import Buku from "../buku/Buku";
+import Comment from "../comment/Comment";
+import AddDaftar from "../daftar/components/AddDaftar";
+import Daftar from "../daftar/Daftar";
 import Dashboard from "../dashboard/Dashboard";
 import Home from "../home/Home";
 import AppLayout from "../layout/applayout/AppLayout";
 import AuthLayout from "../layout/authlayout/AuthLayout";
 import Product from "../product/Product";
+import UserData from "../userdata/UserData";
 // import Action from "./redux/Action";
 import reducerSlice from "./redux/Reducer";
 
@@ -31,6 +35,10 @@ function Base() {
               <Route path={RouteName.product} element={<Product />} />
               <Route path={RouteName.dashboard} element={<Dashboard />} />
               <Route path={RouteName.buku} element={<Buku />} />
+              <Route path={RouteName.userdata} element={<UserData />} />
+              <Route path={RouteName.comment} element={<Comment />} />
+              <Route path={RouteName.daftar} element={<Daftar />} />
+              <Route path={RouteName.addDaftar} element={<AddDaftar />} />
             </Route>
           </Routes>
         </BrowserRouter>

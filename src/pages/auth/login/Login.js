@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UserRepository from "../../../repositories/UserRepository";
+import AuthRepository from "../../../repositories/AuthRepository";
 import EncryptDecrypt from "../../../services/encrypt-decrypt";
 
 const Login = () => {
@@ -9,9 +10,10 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     let item = { email, password };
-    const result = await UserRepository.getAuth(item);
+     const result = await AuthRepository.getLogin(item);
+    //const result = await UserRepository.getAuth(item);
     localStorage.setItem("user-info", EncryptDecrypt.enc(result.token));
-    return (window.location = "/");
+    // return (window.location = "/");
   };
   return (
     <div className="container bg-white p-12 rounded-3xl">
